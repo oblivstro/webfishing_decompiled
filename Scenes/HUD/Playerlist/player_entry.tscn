@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/HUD/Playerlist/player_entry.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/UI/player_options3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/UI/player_options1.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Singletons/Tooltips/tooltip_node.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Textures/UI/player_options5.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/UI/player_options7.png" type="Texture" id=8]
+
+[node name="Control" type="HBoxContainer"]
+anchor_right = 0.575
+anchor_bottom = 0.033
+margin_right = -838.08
+margin_bottom = -51.28
+rect_min_size = Vector2( 211.68, 16 )
+size_flags_horizontal = 11
+size_flags_vertical = 11
+theme = ExtResource( 1 )
+custom_constants/separation = 10
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RichTextLabel" type="Label" parent="."]
+margin_right = 111.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "NAME HERE"
+valign = 1
+
+[node name="ping" type="Label" parent="."]
+margin_left = 121.0
+margin_right = 132.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+align = 2
+valign = 1
+
+[node name="mute" type="Button" parent="."]
+margin_left = 142.0
+margin_right = 178.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 4 )
+
+[node name="TooltipNode" type="Control" parent="mute"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Mute Player"
+body = "Prevent seeing messages from this player."
+
+[node name="block" type="Button" parent="."]
+margin_left = 188.0
+margin_right = 224.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 3 )
+
+[node name="TooltipNode2" type="Control" parent="block"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Block Player"
+body = "Fully block all communications with this player, and hide their avatar. "
+
+[node name="steam" type="Button" parent="."]
+margin_left = 234.0
+margin_right = 270.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 6 )
+
+[node name="TooltipNode3" type="Control" parent="steam"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Steam Account"
+body = "Visit this player's steam account."
+
+[node name="ban" type="Button" parent="."]
+margin_left = 280.0
+margin_right = 316.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 36, 20 )
+icon = ExtResource( 8 )
+
+[node name="TooltipNode4" type="Control" parent="ban"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+header = "Boot Player"
+body = "Boots this player, kicking them from the lobby and not allowing them to return."
+
+[connection signal="pressed" from="mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="block" to="." method="_on_block_pressed"]
+[connection signal="pressed" from="steam" to="." method="_on_steam_pressed"]
+[connection signal="pressed" from="ban" to="." method="_on_ban_pressed"]

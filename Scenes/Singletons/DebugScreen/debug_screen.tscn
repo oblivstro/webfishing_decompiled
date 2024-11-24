@@ -1,0 +1,207 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Singletons/DebugScreen/debug_screen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=2]
+
+[node name="debug_screen" type="CanvasLayer"]
+layer = 100
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.607843 )
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.406
+anchor_bottom = 0.35
+margin_right = -0.320004
+margin_bottom = 0.0400009
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Control" type="Label" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -24.0
+custom_colors/font_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+text = "test
+test
+test"
+autowrap = true
+
+[node name="Panel2" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.607843 )
+anchor_left = 0.02
+anchor_top = 0.36
+anchor_right = 0.406
+anchor_bottom = 1.0
+margin_right = -0.320004
+margin_bottom = 0.0400009
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Control" type="Label" parent="Panel2"]
+anchor_right = 1.0
+anchor_bottom = 0.141
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -24.0
+custom_colors/font_color = Color( 0.0627451, 0.109804, 0.192157, 1 )
+text = "Psuedo Hack Panel"
+autowrap = true
+
+[node name="GridContainer" type="VBoxContainer" parent="Panel2"]
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.9
+
+[node name="Button" type="CheckBox" parent="Panel2/GridContainer"]
+margin_right = 592.0
+margin_bottom = 124.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Toggle Packet Spam : FALSE"
+
+[node name="Button11" type="CheckBox" parent="Panel2/GridContainer"]
+margin_top = 128.0
+margin_right = 592.0
+margin_bottom = 253.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Toggle Ban/Kick Evasion"
+
+[node name="HSeparator" type="HSeparator" parent="Panel2/GridContainer"]
+margin_top = 257.0
+margin_right = 592.0
+margin_bottom = 261.0
+
+[node name="HBoxContainer" type="GridContainer" parent="Panel2/GridContainer"]
+margin_top = 265.0
+margin_right = 592.0
+margin_bottom = 483.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 12
+custom_constants/hseparation = 12
+columns = 2
+
+[node name="Button2" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_right = 290.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Send Message"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button3" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_left = 302.0
+margin_right = 592.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Send Ban All"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button4" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_top = 46.0
+margin_right = 290.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Send Request"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button5" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_left = 302.0
+margin_top = 46.0
+margin_right = 592.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Instance"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button6" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_top = 92.0
+margin_right = 290.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bad Letter"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button7" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_left = 302.0
+margin_top = 92.0
+margin_right = 592.0
+margin_bottom = 126.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Punch All"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button8" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_top = 138.0
+margin_right = 290.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Invalid Actor Data"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button9" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_left = 302.0
+margin_top = 138.0
+margin_right = 592.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Invalid Actor Action"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button10" type="Button" parent="Panel2/GridContainer/HBoxContainer"]
+margin_top = 184.0
+margin_right = 290.0
+margin_bottom = 218.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bad Packets"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="toggled" from="Panel2/GridContainer/Button" to="." method="_on_Button_toggled"]
+[connection signal="toggled" from="Panel2/GridContainer/Button11" to="." method="_on_Button11_toggled"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button6" to="." method="_on_Button6_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button7" to="." method="_on_Button7_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button8" to="." method="_on_Button8_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button9" to="." method="_on_Button9_pressed"]
+[connection signal="pressed" from="Panel2/GridContainer/HBoxContainer/Button10" to="." method="_on_Button10_pressed"]
